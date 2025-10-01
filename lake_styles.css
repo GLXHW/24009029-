@@ -1,0 +1,391 @@
+/* ============================================
+   The Great Lakescape Lodge - Style Sheet
+   Filename: lake_styles.css
+   Author: [Your Name]
+   Date: October 1, 2025
+   ============================================ */
+
+/* Task 3.a: Character encoding definition for CSS file */
+@charset "UTF-8";
+
+/* Task 3.b: Web font definitions using @font-face */
+/* Custom font for headings - Cinzel (serif style) */
+@font-face {
+   font-family: 'CustomHeading';
+   src: url('fonts/Cinzel-Regular.woff') format('woff'),
+        url('fonts/Cinzel-Regular.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}
+
+/* Custom font for body text - Lato (sans-serif) */
+@font-face {
+   font-family: 'CustomBody';
+   src: url('fonts/Lato-Regular.woff') format('woff'),
+        url('fonts/Lato-Regular.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+
+/* Task 3.c: Background and text colors using names and values */
+body {
+   background-color: #2c1810; /* Dark brown background */
+   font-family: 'CustomBody', Arial, sans-serif;
+   color: white; /* Color name */
+   line-height: 1.6;
+}
+
+/* ============================================
+   HEADER AND NAVIGATION STYLES
+   ============================================ */
+
+/* Task 3.e: Selector targeting nested elements */
+header nav {
+   background: linear-gradient(to bottom, 
+               rgba(128, 70, 128, 0.85), 
+               rgba(98, 50, 98, 0.9)); /* Task 3.d: Semi-transparent purple gradient */
+   padding: 5px 0;
+}
+
+/* Task 3.f: List styling modifications */
+nav ul {
+   margin: 0;
+   padding: 0;
+}
+
+nav li {
+   border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Remove border from last navigation item */
+nav li:last-child {
+   border-right: none;
+}
+
+/* Task 3.g: Pseudo-class for link styling */
+nav a {
+   color: white;
+   text-decoration: none;
+   padding: 10px 15px;
+   display: block;
+   transition: background-color 0.3s ease;
+}
+
+/* Task 3.g: Hover pseudo-class */
+nav a:hover {
+   background-color: rgba(255, 255, 255, 0.2); /* Task 3.d: Semi-transparent white */
+}
+
+/* Active/current page link styling */
+nav a:active,
+nav li:first-child a {
+   background-color: rgba(255, 215, 0, 0.3); /* Semi-transparent gold */
+}
+
+/* ============================================
+   WELCOME SECTION STYLES
+   ============================================ */
+
+/* Task 3.e: ID-based selector */
+#welcome {
+   background: linear-gradient(135deg, 
+               rgba(60, 40, 30, 0.7), 
+               rgba(40, 30, 25, 0.8));
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Task 3.h: Padding and margin modifications */
+#welcome h1 {
+   font-family: 'CustomHeading', Georgia, serif;
+   font-size: 2.5em;
+   color: #f5deb3; /* Wheat color */
+   margin: 0 0 20px 0;
+   padding: 0 0 10px 0;
+   border-bottom: 2px solid rgba(245, 222, 179, 0.5);
+   font-style: italic;
+}
+
+/* Task 3.i: Generated content using ::before pseudo-element */
+#welcome h1::before {
+   content: "🏞️ ";
+   margin-right: 10px;
+}
+
+#welcome p {
+   margin: 15px 0;
+   padding: 5px 10px;
+   text-align: justify;
+}
+
+/* Task 3.g: Pseudo-element for styling first letter */
+#welcome p:first-of-type::first-letter {
+   font-size: 2em;
+   font-weight: bold;
+   color: #daa520; /* Goldenrod */
+   float: left;
+   line-height: 1;
+   margin-right: 5px;
+}
+
+/* Emphasize text styling */
+#welcome em {
+   color: #ffd700; /* Gold */
+   font-style: italic;
+   font-weight: bold;
+}
+
+/* ============================================
+   SIDEBAR (ASIDE) STYLES
+   ============================================ */
+
+/* Task 3.e: Child selector - direct children only */
+aside > section {
+   background-color: rgba(128, 70, 128, 0.6); /* Task 3.d: Semi-transparent purple */
+   margin-bottom: 15px;
+   padding: 15px;
+   border-radius: 8px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+aside h2 {
+   font-family: 'CustomHeading', Georgia, serif;
+   color: #ffebcd; /* Blanched almond */
+   font-size: 1.5em;
+   margin: 0 0 12px 0;
+   padding-bottom: 8px;
+   border-bottom: 1px solid rgba(255, 235, 205, 0.4);
+   font-style: italic;
+}
+
+/* Task 3.f: Custom list markers using pseudo-elements */
+aside ul {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+
+aside li {
+   padding: 5px 0;
+   margin-left: 0;
+}
+
+/* Task 3.i: Generated content for list items */
+aside li::before {
+   content: "▸ ";
+   color: #ffd700; /* Gold marker */
+   font-weight: bold;
+   margin-right: 8px;
+}
+
+/* Sidebar link styling */
+aside a {
+   color: #ffe4b5; /* Moccasin */
+   text-decoration: none;
+   transition: color 0.3s ease;
+}
+
+/* Task 3.g: Link hover state */
+aside a:hover {
+   color: #ffffff;
+   text-decoration: underline;
+}
+
+/* Task 3.e: ID selector for Door County section */
+#doorcounty p {
+   line-height: 2;
+   margin: 10px 0;
+}
+
+/* Quote section special styling */
+#quote {
+   background-color: rgba(139, 69, 19, 0.7) !important; /* Task 3.d: Semi-transparent saddle brown */
+   border-left: 4px solid #daa520; /* Goldenrod accent */
+   font-style: italic;
+   position: relative;
+   padding: 20px 15px !important;
+}
+
+/* Task 3.i: Generated content for quotation marks */
+#quote p::before {
+   content: """;
+   font-size: 3em;
+   color: rgba(255, 215, 0, 0.3);
+   position: absolute;
+   top: -10px;
+   left: 10px;
+}
+
+#quote p::after {
+   content: """;
+   font-size: 3em;
+   color: rgba(255, 215, 0, 0.3);
+   position: absolute;
+   bottom: -20px;
+   right: 10px;
+}
+
+/* ============================================
+   NOTES SECTION STYLES
+   ============================================ */
+
+#notes {
+   background-color: rgba(255, 182, 193, 0.2); /* Task 3.d: Semi-transparent light pink */
+   border-radius: 8px;
+}
+
+#notes h2 {
+   font-family: 'CustomHeading', Georgia, serif;
+   color: #ffb6c1; /* Light pink */
+   font-size: 1.8em;
+   margin-top: 0;
+}
+
+/* Task 3.f: Disc list markers for notes */
+#notes ul {
+   list-style-type: square;
+   padding-left: 25px;
+}
+
+#notes li {
+   margin: 10px 0;
+   padding: 5px;
+}
+
+/* Task 3.g: Nth-child pseudo-class for alternating colors */
+#notes li:nth-child(odd) {
+   background-color: rgba(255, 255, 255, 0.05);
+   border-left: 3px solid #ffb6c1;
+}
+
+#notes a {
+   color: #ffc0cb; /* Pink */
+   text-decoration: none;
+   font-weight: bold;
+}
+
+#notes a:hover {
+   color: #ff69b4; /* Hot pink */
+   text-decoration: underline;
+}
+
+/* ============================================
+   EVENTS SECTION STYLES
+   ============================================ */
+
+#events {
+   background: linear-gradient(to right, 
+               rgba(70, 130, 180, 0.3), 
+               rgba(100, 149, 237, 0.3)); /* Task 3.d: Semi-transparent blue gradient */
+   border-radius: 8px;
+}
+
+#events > h2 {
+   font-family: 'CustomHeading', Georgia, serif;
+   color: #87ceeb; /* Sky blue */
+   font-size: 1.8em;
+   margin-top: 0;
+}
+
+/* Task 3.e: Nested selector for event subsections */
+#events section {
+   background-color: rgba(255, 255, 255, 0.08);
+   margin: 15px 0;
+   padding: 12px;
+   border-radius: 6px;
+   border-left: 4px solid #4682b4; /* Steel blue */
+}
+
+#events h3 {
+   color: #b0e0e6; /* Powder blue */
+   margin: 0 0 10px 0;
+   font-size: 1.3em;
+}
+
+/* Task 3.i: Add date icon using generated content */
+#events h3::after {
+   content: " 📅";
+   font-size: 0.8em;
+}
+
+#events p {
+   margin: 8px 0;
+   padding: 0;
+}
+
+/* ============================================
+   FOOTER STYLES
+   ============================================ */
+
+footer {
+   background: linear-gradient(to top, 
+               rgba(128, 70, 128, 0.9), 
+               rgba(98, 50, 98, 0.95));
+   color: #dcdcdc; /* Gainsboro */
+   font-size: 0.9em;
+   margin-top: 20px;
+   border-top: 3px solid #daa520; /* Goldenrod border */
+}
+
+/* Task 3.h: Padding for address */
+footer address {
+   font-style: normal;
+   padding: 10px;
+   margin: 0;
+}
+
+/* ============================================
+   ADDITIONAL ENHANCEMENTS
+   ============================================ */
+
+/* Task 3.g: Focus state for accessibility */
+a:focus {
+   outline: 2px solid #ffd700;
+   outline-offset: 2px;
+}
+
+/* Task 3.g: Selection pseudo-element */
+::selection {
+   background-color: rgba(255, 215, 0, 0.5);
+   color: #000;
+}
+
+::-moz-selection {
+   background-color: rgba(255, 215, 0, 0.5);
+   color: #000;
+}
+
+/* Smooth scrolling for the page */
+html {
+   scroll-behavior: smooth;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN ENHANCEMENTS
+   ============================================ */
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+   body {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+         "header"
+         "welcome"
+         "aside"
+         "notes"
+         "events"
+         "footer";
+   }
+   
+   #welcome img {
+      float: none;
+      margin: 20px auto;
+      display: block;
+   }
+}
+
+

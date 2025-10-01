@@ -1,0 +1,97 @@
+/* Basic layout structure for The Great Lakescape Lodge */
+
+/* Box sizing for all elements */
+* {
+   box-sizing: border-box;
+}
+
+/* Body layout using Grid */
+body {
+   margin: 0;
+   padding: 0;
+   display: grid;
+   grid-template-columns: 1fr 300px;
+   grid-template-rows: auto auto 1fr auto auto;
+   grid-template-areas:
+      "header header"
+      "welcome aside"
+      "welcome aside"
+      "notes events"
+      "footer footer";
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+/* Header spans full width */
+header {
+   grid-area: header;
+}
+
+header img {
+   width: 100%;
+   display: block;
+}
+
+/* Navigation using Flexbox */
+nav ul {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+nav li {
+   flex: 1 1 auto;
+   text-align: center;
+}
+
+/* Main welcome section */
+#welcome {
+   grid-area: welcome;
+   padding: 20px;
+}
+
+#welcome img {
+   float: right;
+   margin: 0 0 20px 20px;
+   max-width: 400px;
+   width: 100%;
+}
+
+/* Sidebar */
+aside {
+   grid-area: aside;
+   padding: 10px;
+}
+
+aside section {
+   margin-bottom: 20px;
+}
+
+aside ul {
+   list-style: none;
+   padding-left: 10px;
+}
+
+/* Notes section */
+#notes {
+   grid-area: notes;
+   padding: 20px;
+}
+
+/* Events section */
+#events {
+   grid-area: events;
+   padding: 20px;
+}
+
+/* Footer */
+footer {
+   grid-area: footer;
+   text-align: center;
+   padding: 15px;
+}
+
+
